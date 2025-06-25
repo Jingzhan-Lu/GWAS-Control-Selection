@@ -19,10 +19,10 @@ install.packages("MatchIt")
 
 # Usage
 1. Matched Control Selection
-source("matched_controls/select_matched_controls.R")
+source("matched_controls.R")
 This will generate a matched case-control dataset using nearest neighbor or propensity score matching.
 2. Random Control Selection
-source("random_controls/select_random_controls.R")
+source("random_controls.R")
 This will randomly select controls from a specified eligible population.
 
 3. Downstream GWAS
