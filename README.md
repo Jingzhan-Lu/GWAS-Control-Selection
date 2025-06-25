@@ -8,26 +8,22 @@ Prerequisites
 R version ≥ 4.0
 
 Required packages:
-dplyr
-data.table
-optmatch
-ggplot2
 MatchIt (for propensity score matching)
+dplyr
+ggplot2
 
 You can install required packages via:
 install.packages(c("dplyr", "data.table", "ggplot2"))
 # For matching:
 install.packages("MatchIt")
-# Or:
-# install.packages("optmatch")
 
-Usage
+# Usage
 1. Matched Control Selection
 source("matched_controls/select_matched_controls.R")
-# This will generate a matched case-control dataset using nearest neighbor or propensity score matching.
+This will generate a matched case-control dataset using nearest neighbor or propensity score matching.
 2. Random Control Selection
 source("random_controls/select_random_controls.R")
-# This will randomly select controls from a specified eligible population.
+This will randomly select controls from a specified eligible population.
 
 3. Downstream GWAS
 Both scripts output .csv or .rds files that can be used in downstream GWAS analysis with tools such as plink, or REGENIEE.
@@ -39,7 +35,7 @@ eQQ plots (e.g., distribution of covariates before/after matching)
 
 📄 Citation
 If you use this code, please cite our article (upon acceptance):
-Jingzhan Lu. Title. Bioinformatics Journal, 2025.
+Lu et al. (2025). Impact of control selection strategies on GWAS results: a study of prostate cancer in the UK Biobank. Bioinformatics Journal, 2025.
 
 📬 Contact
 For questions or collaboration requests, please contact:
