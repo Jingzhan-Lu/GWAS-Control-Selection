@@ -30,7 +30,7 @@ source("random_controls.R")
 This will randomly select controls from a specified eligible population.
 
 3. Downstream GWAS
-Both scripts output .csv or .rds files that can be used in downstream GWAS analysis with tools such as plink, or REGENIEE.
+Both scripts output .csv file that can be used in downstream GWAS analysis with tools such as plink, or REGENIEE.
 
 Output
 Matched or random control dataset (data.frame)
