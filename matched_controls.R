@@ -1,6 +1,9 @@
 # ------------------------------
 # Matched Control Selection
 # ------------------------------
+# Selects 1:4 matched controls for binary phenotype
+# Author: [Jingzhan Lu]
+# Date: [25 Jun. 2025]
 
 # Prepare the essential files
 setwd("//…/Desktop/Working_space") # Set working dir and load library
