@@ -1,9 +1,18 @@
+# ------------------------------
+# Matched Control Selection
+# ------------------------------
+
 # Prepare the essential files
 setwd("//…/Desktop/Working_space") # Set working dir and load library
-install.packages('MatchIt')
+# Install and load MatchIt if not already installed
+if (!requireNamespace("MatchIt", quietly = TRUE)) 
+install.packages("MatchIt")
 library("MatchIt") #install and import the library
-pc_covar <- read.csv("pc_covar.csv", header = TRUE, sep = ",") #loading the covariates file for your phenotype
-data <- pc_covar
+
+# Load covariate + phenotype data
+pheno <- read.table("your_pheno_file.gz", header = TRUE, sep = "\t")
+covar <- read.csv("your_covar_file.csv", header = TRUE, sep = ",") #loading the covariates file for your phenotype
+data <- merge(pheno, covar, by = "eid")
 head(data) # read in data
 table(data$pheno)   # Check data case and control numbers
 
