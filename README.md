@@ -17,6 +17,8 @@ install.packages(c("dplyr", "data.table", "ggplot2"))
 # For matching:
 install.packages("MatchIt")
 
+Default matching case-control ratio is 1 : 4, You can adjust the matching ratio by modifying the ratio parameter in the script (e.g., matchit(..., ratio = 2) for 1:2 matching).
+
 # Usage
 1. Matched Control Selection
 source("matched_controls.R")
