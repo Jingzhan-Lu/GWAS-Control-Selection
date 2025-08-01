@@ -1,6 +1,6 @@
 # GWAS Case-Control Matching Scripts (Random & Matched Controls)
 
-This repository contains R scripts used in the analysis for our manuscript submitted to Bioinformatics Journal. The primary aim of this codebase is to perform genome-wide association studies (GWAS) using two different control selection strategies:
+This repository contains R scripts used in the analysis for our manuscript submitted to Briefings in Bioinformatics Journal. The primary aim of this codebase is to perform genome-wide association studies (GWAS) using two different control selection strategies:
 Matched Controls: Cases are matched to controls based on predefined criteria (e.g. age, genetoping chips, recruitment centre, genetics PCs, etc.)
 Random Selection: Controls are randomly selected from the general population without matching.
 
@@ -40,7 +40,7 @@ eQQ plots (e.g., distribution of covariates before/after matching)
 
 📄 Citation
 If you use this code, please cite our article (upon acceptance):
-Lu et al. (2025). Impact of control selection strategies on GWAS results: a study of prostate cancer in the UK Biobank. Bioinformatics Journal, 2025.
+Lu et al. (2025). Impact of control selection strategies on GWAS results: a study of prostate cancer in the UK Biobank. Briefings in Bioinformatics Journal, 2025.
 
 📬 Contact
 For questions or collaboration requests, please contact:
