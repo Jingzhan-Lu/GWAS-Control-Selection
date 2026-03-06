@@ -42,7 +42,7 @@ Summary tables (case/control counts, demographics)
 eQQ plots (e.g., distribution of covariates before/after matching)
 
 📄 Citation
-If you use this code, please cite our article (upon acceptance):
+If you use this code, please cite our article:
 Lu et al. (2025). Impact of control selection strategies on GWAS results: a study of prostate cancer in the UK Biobank. Briefings in Bioinformatics Journal, 2025.
 
 📬 Contact
