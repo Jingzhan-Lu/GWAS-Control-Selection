@@ -36,9 +36,11 @@ This will randomly select controls from a specified eligible population.
 3. Downstream GWAS
 Both scripts output .csv file that can be used in downstream GWAS analysis with tools such as plink, or REGENIEE.
 
-Output
+Output:
 Matched or random control dataset (data.frame)
+
 Summary tables (case/control counts, demographics)
+
 eQQ plots (e.g., distribution of covariates before/after matching)
 
 📄 Citation
