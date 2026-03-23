@@ -13,7 +13,6 @@ assoc1 <- assoc1[, c("CHROM", "GENPOS", "ALLELE0", "ALLELE1", "LOG10P",'BETA', '
 install.packages('topr')  #https://github.com/totajuliusd/topr
 library(topr)
 library(dplyr)
-#op_gwas <- fread('OP_tier1_chrall_man.regenie')
 tg_gwas_man <- assoc1 %>%  #Required columns are CHROM, POS and P
   mutate(
     POS = as.integer(GENPOS), #rename the column name
