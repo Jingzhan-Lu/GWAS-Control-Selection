@@ -1,3 +1,6 @@
+# Integration of Rob’s GWAS pipeline (REGENIE) with visualization 'topr' tools (Manhattan and QQ plots), along with Alok’s Chr:POS to rsID (SNP) conversion pipeline on Slade.
+#Notice: This code is used for internal Exeter GOCT groups on DNAnexus only:)
+
 #dx ls
 #dx download -r ratio_RINT_burden_wgs/imputed
 
@@ -35,11 +38,11 @@ regionplot(tg_gwas_man_filt, gene = "CETP")
 dev.off()
 
 
-##### How to transfer the CHR:GENOPOS to RSID (SNP) #########
+##### How to transfer the CHR:GENOPOS to RSID (SNP) on Slade #########
 #module load Anaconda3
 #pip install polars
 #python /slade/projects/Public_Ref_Datasets/dbsnp/scripts/rsid_assign_script.py
-#Enter path to file (supports .csv, .tsv, .parquet, .gz): /slade/home/jl1426/0323TG_HDL_GWAS.csv
+#Enter pathway to file (supports .csv, .tsv, .parquet, .gz): /slade/home/jl***/0323_GWAS.csv
 #Enter genomic build (hg37 or hg38): hg37
 #Enter the name of the chromosome column (e.g., CHROM): CHROM
 #Enter the name of the position column (e.g., GENPOS):GENPOS
