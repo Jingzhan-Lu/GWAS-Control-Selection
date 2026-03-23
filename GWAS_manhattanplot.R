@@ -1,0 +1,48 @@
+#dx ls
+#dx download -r ratio_RINT_burden_wgs/imputed
+
+file_list <- list.files(path = "/home/rstudio-server/imputed", pattern = "*_chr.*\\.regenie$", full.names = TRUE)#any beginning name, contained the chr and ends by .regeneie file
+data_list <- lapply(file_list, function(file) {
+  read.csv(file, header = TRUE, sep = ' ')
+})
+combined_data <- do.call(rbind, data_list)
+assoc1 <- combined_data[order(combined_data[,"LOG10P"], decreasing = TRUE), ]
+assoc1 <- assoc1[, c("CHROM", "GENPOS", "ALLELE0", "ALLELE1", "LOG10P",'BETA', 'SE')]
+
+
+install.packages('topr')  #https://github.com/totajuliusd/topr
+library(topr)
+library(dplyr)
+#op_gwas <- fread('OP_tier1_chrall_man.regenie')
+tg_gwas_man <- assoc1 %>%  #Required columns are CHROM, POS and P
+  mutate(
+    POS = as.integer(GENPOS), #rename the column name
+    P = 10^(-LOG10P)
+  )
+
+tg_gwas_man_filt <- tg_gwas_man[tg_gwas_man$P < 1e-4, ] #cut down some non-meaningful signal to speed up
+
+png('TG_HDL_ratio_man.png', width = 7, height = 4, units = "in", res = 300)
+manhattan(tg_gwas_man_filt, annotate = 5e-9)
+dev.off()
+
+png('TG_HDL_ratio_QQ.png', width = 7, height = 6, units = "in", res = 300)
+qqtopr(tg_gwas_man_filt)
+dev.off()
+
+#LocusZoom with specific gene
+png('CETP_regionplot.png', width = 8, height = 6, units = "in", res = 300)
+regionplot(tg_gwas_man_filt, gene = "CETP")
+dev.off()
+
+
+##### How to transfer the CHR:GENOPOS to RSID (SNP) #########
+#module load Anaconda3
+#pip install polars
+#python /slade/projects/Public_Ref_Datasets/dbsnp/scripts/rsid_assign_script.py
+#Enter path to file (supports .csv, .tsv, .parquet, .gz): /slade/home/jl1426/0323TG_HDL_GWAS.csv
+#Enter genomic build (hg37 or hg38): hg37
+#Enter the name of the chromosome column (e.g., CHROM): CHROM
+#Enter the name of the position column (e.g., GENPOS):GENPOS
+#Enter the name of the effect allele column (e.g., ALLELE1): ALLELE1
+#Enter the name of the other allele column (e.g., ALLELE0): ALLELE0
