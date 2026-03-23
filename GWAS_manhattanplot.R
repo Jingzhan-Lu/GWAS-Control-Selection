@@ -1,5 +1,7 @@
 # Integration of Rob’s GWAS pipeline (REGENIE) with visualization 'topr' tools (Manhattan and QQ plots), along with Alok’s Chr:POS to rsID (SNP) conversion pipeline on Slade.
-#Notice: This code is used for internal Exeter GOCT groups on DNAnexus only:)
+#Notice: This code is used for visulise the GWAS results on DNAnexus only (Exeter GOCT groups) :)
+#https://github.com/totajuliusd/topr
+#https://kscott-1.github.io/topr/articles/topr.html
 
 #dx ls
 #dx download -r ratio_RINT_burden_wgs/imputed
@@ -13,7 +15,7 @@ assoc1 <- combined_data[order(combined_data[,"LOG10P"], decreasing = TRUE), ]
 assoc1 <- assoc1[, c("CHROM", "GENPOS", "ALLELE0", "ALLELE1", "LOG10P",'BETA', 'SE')]
 
 
-install.packages('topr')  #https://github.com/totajuliusd/topr
+install.packages('topr')  
 library(topr)
 library(dplyr)
 tg_gwas_man <- assoc1 %>%  #Required columns are CHROM, POS and P
