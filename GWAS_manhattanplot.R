@@ -50,3 +50,15 @@ dev.off()
 #Enter the name of the position column (e.g., GENPOS):GENPOS
 #Enter the name of the effect allele column (e.g., ALLELE1): ALLELE1
 #Enter the name of the other allele column (e.g., ALLELE0): ALLELE0
+
+##### How to prepare the GWAS Phenotype file fro Rob's pipeline (df to .gz file format)#########
+# creat a temporary dataframe file to save your phenotypes, which only required three columns: FID, IID and pheno
+df_out <- data.frame(
+  FID = df$eid,
+  IID = df$eid,
+  pheno = df$pheno  #0 for controls, 1 for cases. change for any column name you like, but this will be your REGENIE output files name!!!
+)
+# write to .gz file
+gz_con <- gzfile(output_file, "w")
+write.table(df_out, gz_con, quote = FALSE, row.names = FALSE, col.names = TRUE, sep = "\t")
+close(gz_con)
