@@ -42,8 +42,11 @@ dev.off()
 
 ##### How to transfer the CHR:GENOPOS to RSID (SNP) on Slade #########
 #module load Anaconda3
+#module load dxpy
 #pip install polars
 #python /slade/projects/Public_Ref_Datasets/dbsnp/scripts/rsid_assign_script.py
+cd /slade/projects/Public_Ref_Datasets/dbsnp/scripts
+python rsid_assign_script /slade/home/jl1426/TG_HDL_ratio.gz
 #Enter pathway to file (supports .csv, .tsv, .parquet, .gz): /slade/home/jl***/0323_GWAS.csv
 #Enter genomic build (hg37 or hg38): hg37
 #Enter the name of the chromosome column (e.g., CHROM): CHROM
