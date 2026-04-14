@@ -1,6 +1,6 @@
 # GWAS Case-Control Matching Scripts (Random & Matched Controls)
 
-## Preprint
+## Publication
 The manuscript is available at: [Briefings in Bioinformatics] (https://doi.org/10.1093/bib/bbag102)
 
 This repository contains R scripts used in the analysis for our manuscript submitted to Briefings in Bioinformatics Journal. The primary aim of this codebase is to perform genome-wide association studies (GWAS) using two different control selection strategies:
